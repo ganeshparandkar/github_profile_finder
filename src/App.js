@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import './App.css';
 import Navbar from './components/layout/Navbar';
-import { Users } from './components/users/Users';
 import Axios from 'axios';
+import Users from './components/users/Users';
 class App extends Component {
   state = {
     users: [],

@@ -4,7 +4,7 @@ import { FaGithub } from 'react-icons/fa';
 
 const Navbar = ({ title }) => {
   return (
-    <nav className='navbar bg-primary'>
+    <nav className='navbar bg-primary '>
       <h1 className='mynavbarfont'>
         {/* <i className={icon} /> */}
         <FaGithub />
