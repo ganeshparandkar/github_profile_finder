@@ -5,27 +5,33 @@ export class Search extends Component {
   state = {
     text: '',
   };
+
   static propTypes = {
     searchUsers: PropTypes.func.isRequired,
     clearUsers: PropTypes.func.isRequired,
+    clearAlert: PropTypes.func.isRequired,
     showClear: PropTypes.bool.isRequired,
     setAlert: PropTypes.func.isRequired,
   };
+
   onChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
+
   onSubmit = (e) => {
     e.preventDefault();
     if (this.state.text === '') {
       this.props.setAlert('Please enter some Text', 'light');
     } else {
-      // console.log(this.state.text);
+      // * clear the alert box if there are users available
+      this.props.clearAlert();
       this.props.searchUsers(this.state.text);
       this.setState({ text: '' });
     }
   };
+
   render() {
     return (
       <div>
