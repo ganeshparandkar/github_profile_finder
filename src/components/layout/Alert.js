@@ -1,10 +1,17 @@
 import React from 'react';
+import { FaInfoCircle } from 'react-icons/fa';
 
 const Alert = ({ alert }) => {
   return (
     alert !== null && (
       <div className={`alert alert-${alert.type}`}>
-        <i className='fas fa-info-circle'>{alert.msg}</i>
+        <span className='icon'>
+          <FaInfoCircle></FaInfoCircle>
+        </span>
+        <span className='message'>
+          {`    `}
+          {alert.msg}
+        </span>
       </div>
     )
   );
