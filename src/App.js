@@ -7,6 +7,7 @@ import { Search } from './components/users/Search';
 import NotFound from './components/layout/NotFound';
 import Alert from './components/layout/Alert';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { About } from './components/pages/About';
 
 class App extends Component {
   state = {
@@ -86,6 +87,7 @@ class App extends Component {
                   </Fragment>
                 )}
               />
+              <Route exact path='/about' component={About}></Route>
             </Switch>
           </div>
         </div>

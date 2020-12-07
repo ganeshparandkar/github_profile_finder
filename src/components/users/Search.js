@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
+import ShowText from './../layout/ShowText';
+import { render } from '@testing-library/react';
 
 export class Search extends Component {
   state = {
     text: '',
+    showText: '',
   };
 
   static propTypes = {
@@ -17,6 +20,7 @@ export class Search extends Component {
   onChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
+      showText: e.target.value,
     });
   };
 
@@ -26,6 +30,7 @@ export class Search extends Component {
       this.props.setAlert('Please enter some Text', 'light');
     } else {
       // * clear the alert box if there are users available
+
       this.props.clearAlert();
       this.props.searchUsers(this.state.text);
       this.setState({ text: '' });
@@ -50,13 +55,16 @@ export class Search extends Component {
           />
         </form>
         {this.props.showClear && (
-          //! && => if show clear is true
-          <button
-            className=' btn btn-light btn-block'
-            onClick={this.props.clearUsers}
-          >
-            Clear
-          </button>
+          //! && => if show clear is true ---//refer conditional rendering docs
+          <div>
+            <button
+              className=' btn btn-light btn-block'
+              onClick={this.props.clearUsers}
+            >
+              Clear
+            </button>
+            <ShowText showtext={this.state.showText}></ShowText>
+          </div>
         )}
       </div>
     );
