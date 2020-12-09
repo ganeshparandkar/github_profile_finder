@@ -102,7 +102,26 @@ class App extends Component {
                   </Fragment>
                 )}
               />
+              <Route
+                exact
+                path='/github_profile_finder/'
+                render={() => (
+                  <Fragment>
+                    <Search
+                      searchUsers={this.searchUsers}
+                      clearUsers={this.clearUsers}
+                      showClear={users.length > 0 ? true : false}
+                      clearAlert={this.clearAlert}
+                      setAlert={this.setAlert}
+                    />
+
+                    <NotFound notfound={notfound} />
+                    <Users loading={loading} users={this.state.users} />
+                  </Fragment>
+                )}
+              />
               <Route exact path='/about' component={About}></Route>
+
               <Route
                 exact
                 path='/user/:Login'

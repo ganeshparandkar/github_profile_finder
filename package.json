@@ -1,5 +1,4 @@
 {
-  "homepage": "https://ganeshparandkar.github.io/github_profile_finder",
   "name": "github-profile-finder",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +18,6 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "deploy": "gh-pages -d dist",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
